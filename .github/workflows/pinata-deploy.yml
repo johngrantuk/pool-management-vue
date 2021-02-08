@@ -25,8 +25,9 @@ jobs:
         run: npm install
 
       - name: Build Kovan
-        run: npm run build-pinata
+        run: npm run build
         env:
+          PINATA: true
           VUE_APP_ENV: production
           VUE_APP_NETWORK: kovan
 
@@ -37,8 +38,9 @@ jobs:
           IPFS_DEPLOY_PINATA__SECRET_API_KEY: ${{ secrets.IPFS_DEPLOY_PINATA__SECRET_API_KEY }}
 
       - name: Build Mainnet
-        run: npm run build-pinata
+        run: npm run build
         env:
+          PINATA: true
           VUE_APP_ENV: production
           VUE_APP_NETWORK: homestead
 
@@ -66,8 +68,9 @@ jobs:
         run: npm install
 
       - name: Build Beta
-        run: npm run build-pinata
+        run: npm run build
         env:
+          PINATA: true
           VUE_APP_ENV: production
           VUE_APP_NETWORK: homestead
 
